@@ -1,6 +1,13 @@
 const express = require("express");
 const dotenv = require("dotenv").config();
 const connectDB = require("./config/db");
+const cors = require("cors");
+
+const corsOptions = {
+  origin: "",
+  methods: "GET",
+  allowedHeaders: "Content-Type,Authorization",
+};
 
 connectDB();
 
@@ -11,6 +18,8 @@ const app = express();
 // app.get("/", (req, res) => {
 //   res.send("Hello world");
 // });
+
+app.use(cors(corsOptions));
 
 app.use(express.json());
 
