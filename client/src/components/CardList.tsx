@@ -7,7 +7,10 @@ const CardList: FC = () => {
 
   const fetchData = async () => {
     try {
-      const response = await fetch("/api/tests");
+      // const response = await fetch("/api/tests");
+      const response = await fetch(
+        "https://internationalization-api.onrender.com/api/tests"
+      );
 
       if (!response.ok) {
         throw new Error(`HTTP error! status: ${response.status}`);

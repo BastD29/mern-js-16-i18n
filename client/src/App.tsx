@@ -5,10 +5,6 @@ import CardDetail from "./components/CardDetail";
 
 export default function App() {
   return (
-    // <>
-    //   <Translation />
-    //   <CardList />
-    // </>
     <>
       <Translation />
       <Routes>
