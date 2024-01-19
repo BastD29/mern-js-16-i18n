@@ -9,6 +9,20 @@ const getTests = async (req, res) => {
   }
 };
 
+const getTestById = async (req, res) => {
+  try {
+    const test = await Test.findById(req.params.id);
+
+    if (test) {
+      res.status(200).json(test);
+    } else {
+      res.status(404).json({ message: "Test not found" });
+    }
+  } catch (error) {
+    res.status(500).json({ message: error.message });
+  }
+};
+
 const createTests = async (req, res) => {
   try {
     const tests = await Test.insertMany(req.body);
@@ -18,4 +32,4 @@ const createTests = async (req, res) => {
   }
 };
 
-module.exports = { getTests, createTests };
+module.exports = { getTests, getTestById, createTests };

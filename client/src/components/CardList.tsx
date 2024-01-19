@@ -1,10 +1,8 @@
 import { FC, useEffect, useState } from "react";
 import { Test } from "../models/Test";
-import { useTranslation } from "react-i18next";
+import Card from "./Card";
 
-const Data: FC = () => {
-  const { i18n } = useTranslation();
-
+const CardList: FC = () => {
   const [tests, setTests] = useState<Test[]>([]);
 
   const fetchData = async () => {
@@ -28,15 +26,12 @@ const Data: FC = () => {
   }, []);
 
   return (
-    <>
+    <div className="card-list">
       {tests.map((test) => (
-        <div key={test.testId}>
-          <h1>{i18n.t(`titles.${test.title}`)}</h1>
-          <h1>{i18n.t(`descriptions.${test.description}`)}</h1>
-        </div>
+        <Card key={test.testId} test={test} />
       ))}
-    </>
+    </div>
   );
 };
 
-export default Data;
+export default CardList;

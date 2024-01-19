@@ -1,0 +1,25 @@
+* {
+  text-decoration: none;
+  color: black;
+}
+
+.card-list {
+  padding: 24px;
+
+  display: flex;
+  flex-direction: column;
+  grid-gap: 16px;
+}
+
+.card {
+  border: solid 1px black;
+  width: 300px;
+
+  padding: 16px;
+}
+
+.card:hover {
+  h1 {
+    color: blue;
+  }
+}
