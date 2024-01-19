@@ -4,7 +4,7 @@ const connectDB = require("./config/db");
 const cors = require("cors");
 
 const corsOptions = {
-  origin: "",
+  origin: "https://internationalization-afiu.onrender.com",
   methods: "GET",
   allowedHeaders: "Content-Type,Authorization",
 };
