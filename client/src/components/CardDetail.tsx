@@ -1,11 +1,11 @@
 import { FC, useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { Test } from "../models/Test";
 import { useTranslation } from "react-i18next";
 
 const CardDetail: FC = () => {
   const { id } = useParams();
-
+  const navigate = useNavigate();
   const { i18n } = useTranslation();
 
   const [test, setTest] = useState<Test | null>(null);
@@ -36,6 +36,7 @@ const CardDetail: FC = () => {
 
   return (
     <div className="card-detail">
+      <button onClick={() => navigate(-1)}>Go back</button>
       {/* <h1>{test.title}</h1> */}
       <h1>{i18n.t(`titles.${test.title}`)}</h1>
       <p>{i18n.t(`descriptions.${test.description}`)}</p>
